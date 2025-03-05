@@ -6,8 +6,21 @@
     <title>Document</title>
   </head>
   <body>
-    <h2>Register</h2>
     <form id="registerForm">
+      <h2>Register</h2>
+      <input
+        type="text"
+        id="firstname"
+        placeholder="First Name"
+        required
+      /><br />
+      <input type="text" id="lastname" placeholder="Last Name" required /><br />
+      <input
+        type="text"
+        id="address"
+        placeholder="Home Address"
+        required
+      /><br />
       <input type="text" id="username" placeholder="Username" required /><br />
       <input type="email" id="email" placeholder="Email" required /><br />
       <input
@@ -17,10 +30,11 @@
         required
       /><br />
       <button type="submit">Register</button>
-      <button type="reset" class="cl">Clear</button>
+      <button type="reset">Clear</button>
     </form>
-
+    <br />
     <form id="loginForm">
+      <h2>Login</h2>
       <input type="text" id="loginUsername" placeholder="Username" required />
       <input
         type="password"
@@ -29,6 +43,7 @@
         required
       />
       <button type="submit">Login</button>
+      <button type="reset">Clear</button>
     </form>
     <script src="./index.js"></script>
   </body>

@@ -24,3 +24,22 @@ document
       .then((data) => console.log(data))
       .catch((error) => console.error("Error:", error));
   });
+
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const loginRequest = {
+      username: document.getElementById("loginUsername").value,
+      password: document.getElementById("loginPassword").value,
+    };
+    fetch("http://localhost:8080/api/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginRequest),
+    })
+      .then((message) => console.log(message))
+      .catch((error) => console.error("Error:", error));
+  });
