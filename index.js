@@ -3,6 +3,9 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     const user = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      address: document.getElementById("address").value,
       username: document.getElementById("username").value,
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
@@ -19,10 +22,11 @@ document
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.ok;
+        return alert("User has been saved!");
       })
       .then((data) => console.log(data))
       .catch((error) => console.error("Error:", error));
+    registerForm.reset();
   });
 
 document
@@ -40,6 +44,13 @@ document
       },
       body: JSON.stringify(loginRequest),
     })
-      .then((message) => console.log(message))
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return alert("User has been logged in!");
+      })
+      .then((data) => console.log(data))
       .catch((error) => console.error("Error:", error));
+    loginForm.reset();
   });
